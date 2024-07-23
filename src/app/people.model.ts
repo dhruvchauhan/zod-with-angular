@@ -5,8 +5,7 @@ export const PersonSchema = z.object({
   url: z.string().url(),
   name: z.string(),
   created: z.coerce.date(),
-  gender: z.string(),
-  other: z.string(),
+  other: z.string().optional(),
 });
 
 export const PeopleSchema = z.object({

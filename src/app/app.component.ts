@@ -9,7 +9,7 @@ import { ZodError } from 'zod/lib/external';
 const UserForm = z.object({
   name: z.string(),
   phoneNumber: z.string().optional(),
-  email: z.string(),
+  email: z.string().email(),
   website: z.string().optional(),
 });
 
@@ -29,7 +29,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     try {
-      this.validateFormInput('');
+      this.validateFormInput({
+        name: 'abc',
+        email: 'abc@a.com'
+      });
     } catch (e) {
       console.log((e as ZodError).errors);
     }
