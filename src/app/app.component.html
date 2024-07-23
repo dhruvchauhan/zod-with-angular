@@ -1,0 +1,4 @@
+<h2>Person list</h2>
+<div class="people-list">
+  <li *ngFor="let person of allPeople$ | async">{{ person.name }}</li>
+</div>
